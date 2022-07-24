@@ -16,6 +16,9 @@
     --hero-button-hover: #188CE8;
     --header-border: #ECECEC;
     --projects-border: #EEEEEE;
+    --features-icon-background: #F5F4FA;
+    --team-clients-icons-link: #AFB1B8;
+    --footer-socials-link: rgba(255, 255, 255, 0.1);
 }
 
 h1,
@@ -78,6 +81,10 @@ img {
 
 }
 
+.title {
+    font-size: 36px;
+}
+
 body {
     font-family: var(--main-font-family);
     color: var(--main-color);
@@ -103,7 +110,11 @@ body {
 }
 
 .contacts-link {
-    color:var(--secondary-color);    
+    color:var(--secondary-color);
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    fill: currentColor;
 }
 
 .nav-link:hover,
@@ -155,15 +166,27 @@ body {
     margin-right: 50px;
     }
 
+.contacts-icon {
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.contacts-icon:hover,
+.contacts-icon:focus {
+    fill: var(--accent-color);
+}
 /*================/HEADER===================*/
 
 /*================HERO=====================*/
 
 .hero {
-    background-color: var(--dark-background);
     text-align: center;
     padding-top: 200px;
     padding-bottom: 200px;
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), 
+    url(../images/hero/bg.jpg);
+    background-size: cover;
+    background-color: var(--dark-background);
 }
 
 .hero-title {
@@ -208,6 +231,10 @@ body {
     border-radius: 4px;
 }
 
+.contacts-item {
+    display: inline-flex;
+}
+
 /*================/HERO====================*/
 
 
@@ -224,6 +251,11 @@ body {
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
     margin: -1px;
+}
+
+.features {
+    padding-top: 94px;
+    padding-bottom: 94px;
 }
 
 .features-subtitle {
@@ -256,10 +288,33 @@ body {
 }
 
 .team-card-content-wrapper {
+    border-radius: 0px 0px 4px 4px;
     text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
+    background-color: var(--light-color);    
 }
+
+.features-icons-list{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.features-icons-list-item {
+    min-width: 270px;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--features-icon-background);
+    
+}
+
+
 
 /*===============/FEATURES==================*/
 
@@ -302,10 +357,93 @@ body {
     line-height: 1.19; 
     letter-spacing: 0.03em;
     color: var(--secondary-color);
+    margin-bottom: 16px;
 }
+
+.team-icons-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-icons-item {
+    width: 44px;
+    height: 44px;        
+}
+
+.team-icons-link {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--light-color);
+}
+
+.team-icons-link:hover,
+.team-icons-link:focus {
+    background-color: var(--accent-color);
+}
+
+.team-icon {
+    fill: var(--team-clients-icons-link);
+}
+
+.team-icons-link:hover .team-icon,
+.team-icons-link:focus .team-icon {
+    fill: var(--light-color);
+}
+
+.team-item {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    flex-basis: calc((100% - 90px) / 4);
+}
+
 
 /*===============/WORK, TEAM=======================*/
 
+/*===============CLIENTS===========================*/
+.clients-title {
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+.clients-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.clients-item {
+    width: 170px;
+    height: 92px;
+}
+
+.clients-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+    width: 100%;
+    height: 100%; 
+    fill: var(--team-clients-icons-link);
+    
+}
+
+.clients-link:hover,
+.clients-link:focus {
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/*===============/CLIENTS===========================*/
 
 /*===============FOOTER=====================*/
 
@@ -321,6 +459,7 @@ body {
 
 .address {
     font-style: normal;
+    margin-right: 70px;
 }
 
 .address-item:not(:last-child) {
@@ -335,14 +474,59 @@ body {
     color: var(--light-color);
 }
 
-.footer-contacts-link {
-    color: var(--footer-contacts);
+.footer-logo {
+    display: inline-block;
+    margin-right: 156px;
+    margin-bottom: 20px;
 }
 
-.footer-logo {
-    margin-bottom: 20px;
-    display: inline-block;
+.join {
+    text-transform: uppercase;
+    color: var(--light-color);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;    
 }
+
+.footer-container {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-social-list {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-social-item {}
+
+.footer-social-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--footer-socials-link);
+
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+    background-color: var(--accent-color);
+}
+
+.footer-social-icon {
+    fill: var(--light-color);
+
+}
+
+
+
+
+
 /*===============/FOOTER=====================*/
 
 
@@ -383,6 +567,7 @@ body {
 .filter-button:focus {
     background-color: var(--accent-color);
     color: var(--light-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .filter-item:not(:last-child) {
@@ -394,12 +579,22 @@ body {
     
 }
 
+.project-link {
+    display: inline-block;
+}
+
+.project-link:hover,
+.project-link:focus {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
 
 .projects-name {
     font-weight: 700;
     font-size: 18px;
     line-height: 2;  
     letter-spacing: 0.06em;
+    color: var(--main-color);
 
     margin-bottom: 4px;
 }
@@ -421,3 +616,7 @@ body {
 }
 
 /*===============/PORTFOLIO===================*/
+
+
+
+
